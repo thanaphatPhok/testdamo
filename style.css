@@ -1,0 +1,232 @@
+.contact-section {
+  background-color: rgba(0, 0, 0, 0); /* โปร่งใส */
+  color: #fff;
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.contact-list {
+  list-style: none;
+  padding: 0;
+  font-size: 1.2rem;
+}
+
+.contact-list li {
+  margin: 10px 0;
+}
+
+.contact-list a {
+  color: #0ff;
+  text-decoration: none;
+}
+
+.contact-list a:hover {
+  text-decoration: underline;
+}
+
+
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background-color: black;
+  font-family: 'Kanit', 'Comic Neue', cursive, sans-serif;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+h1, h2, p, a {
+  font-family: 'Kanit', 'Comic Neue', cursive, sans-serif;
+}
+
+.background {
+  position: relative;
+  height: 100vh;
+  background: url('https://images.unsplash.com/photo-1587614382346-ac2b93b6a61a?auto=format&fit=crop&w=1950&q=80') no-repeat center center/cover;
+}
+
+.galaxy, .stars {
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  z-index: 0;
+}
+
+.stars {
+  background-image: radial-gradient(white 1px, transparent 1px),
+                    radial-gradient(white 1px, transparent 1px);
+  background-size: 100px 100px, 150px 150px;
+  background-position: 0 0, 75px 75px;
+  animation: starfall 60s linear infinite;
+  opacity: 0.2;
+}
+
+@keyframes starfall {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(1000px); }
+}
+
+.content {
+  position: relative;
+  z-index: 2;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.center-text {
+  text-align: center;
+}
+
+.text-glow {
+  font-size: 4rem;
+  font-weight: bold;
+  background: linear-gradient(90deg, rgba(0,255,255,0.2), #0ff, #fff, #0ff, rgba(0,255,255,0.2));
+  background-size: 400% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: glow-sweep 8s linear infinite;
+}
+
+@keyframes glow-sweep {
+  0% { background-position: -100% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 24px;
+  background: rgba(0, 255, 255, 0.1);
+  color: #0ff;
+  border: 1px solid #0ff;
+  text-decoration: none;
+  font-size: 1rem;
+  border-radius: 6px;
+  transition: background 0.3s, color 0.3s;
+}
+
+.btn:hover {
+  background: #0ff;
+  color: black;
+}
+
+.portfolio-section {
+  padding: 100px 20px;
+  background-color: #000;
+  color: #fff;
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+.gallery {
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.gallery-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 400px;
+}
+
+.gallery img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 8px;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 1s ease;
+  cursor: pointer;
+}
+
+.gallery img.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.caption {
+  margin-top: 10px;
+  color: #ccc;
+  font-size: 0.95rem;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(10px);
+  background-color: rgba(0, 0, 0, 0.8);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+}
+
+.overlay.active {
+  display: flex;
+}
+
+.overlay-content img {
+  max-width: 90%;
+  max-height: 80%;
+  border-radius: 10px;
+  box-shadow: 0 0 20px #0ff;
+  animation: zoom-in 0.5s ease forwards;
+}
+
+@keyframes zoom-in {
+  from { transform: scale(0.7); opacity: 0; }
+  to   { transform: scale(1); opacity: 1; }
+}
+
+@media (max-width: 768px) {
+  .text-glow {
+    font-size: 2.5rem;
+  }
+
+  .gallery {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .gallery img {
+    height: auto;
+  }
+}
+.about-section {
+  padding: 60px 20px;
+  background-color: #000;
+  color: #fff;
+  text-align: center;
+}
+
+.about-section h2 {
+  font-size: 2rem;
+  color: #0ff;
+  margin-bottom: 30px;
+}
+
+.about-content {
+  max-width: 800px;
+  margin: 0 auto;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #ccc;
+}
+
+@media (max-width: 768px) {
+  .about-content {
+    font-size: 1rem;
+    padding: 0 10px;
+  }
+}
+
