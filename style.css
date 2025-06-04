@@ -230,3 +230,42 @@ h1, h2, p, a {
   }
 }
 
+.chat-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+  text-align: center;
+  animation: float 3s ease-in-out infinite;
+}
+
+.chat-button a {
+  display: inline-block;
+  background-color: #0084ff;
+  color: white;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  font-size: 30px;
+  line-height: 60px;
+  text-decoration: none;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.chat-label {
+  display: block;
+  margin-top: 5px;
+  color: white;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
